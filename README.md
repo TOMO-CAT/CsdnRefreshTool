@@ -23,7 +23,7 @@ UV指的是访问的用户数。系统为每个访问的用户自动匹配一个
 
 ## 开发思路
 ### 1、获取CSDN博文信息
-在开始刷CSDN博文浏览量之前，我们先要拿到所有博文的链接和其他信息。正好CSDN的博文存储在形如"https://blog.csdn.net/{}/article/list/{}"的链接（第一个{}是你的CSDN用户标识，第二个{}从1开始表示你的博文列表页）。具体的实现如下:
+在开始刷CSDN博文浏览量之前，我们先要拿到所有博文的链接和其他信息。正好CSDN的博文存储在形如 "https://blog.csdn.net/{}/article/list/{}" 的链接（第一个{}是你的CSDN用户标识，第二个{}从1开始表示你的博文列表页）。具体的实现如下:
 
 ```
 def get_article_info(self):
@@ -144,7 +144,7 @@ AutoPvUp().saver()
 from IncreaseCsdnPv import AutoPvUp
 AutoPvUp().plot()
 ```
-![b7ba32d13113dd751bf05a80ad635673.png](en-resource://database/521:0)
+![](https://github.com/TOMO-CAT/CsdnRefreshTool/blob/master/csdn_article_info.png)
 >最上面的图是不同文章的阅读量数据；左下角的图是文章数增长图；右下角的图是阅读量增长图。
 
 * 根据提供的刷量pv_num和睡眠时间sleeptime启动刷量程序
