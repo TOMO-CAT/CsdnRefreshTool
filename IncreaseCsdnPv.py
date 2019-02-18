@@ -6,7 +6,7 @@ Created on Tue Jan 29 10:39:39 2019
 准备工作：得先构造自己的代理IP池，我已经通过GetProxyIP.py获取，存储在IP.db中
 功能：刷csdn博客流量，体验一下互联网pv中的去爬去刷
 """
-from RandomHeaders import FakeHeaders
+#from RandomHeaders import FakeHeaders
 from DatabaseTable import IPPool, InfoPool
 from bs4 import BeautifulSoup
 import time
@@ -79,22 +79,24 @@ class AutoPvUp():
         #根据博主标识遍历博文列表，并返回博文信息
         page_num = 0
         INFO = []
-        sleep_time = 1 + 4 * random.random() #1~5秒的睡眠时间
         while True:
             #因为不清楚博文列表多少页，因此一直跑下去直到无法获取博文信息
+            sleep_time = 20 * random.random() #平均10秒的睡眠时间
+            print("开始等待{:.1f}秒以避免本地IP受限制...".format(sleep_time))
             time.sleep(sleep_time)
+        
             page_num += 1
             #第几页的博文列表
             csdn_url = "https://blog.csdn.net/{}/article/list/{}".format(self.__blogger, page_num)
             print(u"正在访问{}...".format(csdn_url))
             
-            headers = FakeHeaders().random_headers_for_csdn()
+            #访问次数不多且不频繁，直接爬取信息即可，无需伪造headers
             re_conn_times = 5
             ##因为获取文章信息比较重要，设置重连次数为5，且最终需要返回获取的文章数量
             
             for i in range(re_conn_times):
                 try:
-                    response = requests.get(url = csdn_url, headers=headers, timeout=5)
+                    response = requests.get(url = csdn_url, timeout=5)
                     if response.status_code == 200:
                         break #成功获取response则退出循环
                     else:
