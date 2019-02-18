@@ -153,3 +153,8 @@ AutoPvUp().plot()
 from IncreaseCsdnPv import AutoPvUp
 AutoPvUp().csdn_refresh(pv_num = 1000, sleeptime = 10)
 ```
+
+## 参考
+https://blog.csdn.net/dala_da/article/details/79401163
+https://github.com/yooongchun/CSDN_Visitor
+https://blog.csdn.net/topleeyap/article/details/79119098
