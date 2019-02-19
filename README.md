@@ -153,6 +153,9 @@ AutoPvUp().plot()
 from IncreaseCsdnPv import AutoPvUp
 AutoPvUp().csdn_refresh(pv_num = 1000, sleeptime = 10)
 ```
+### 5、FastRefresh.py
+相对独立的模块，和IncreaseCsdnPv.py模仿博文访问数的高斯分布进行访问不同，FastRefresh模块每次遍历访问所有博文一次，同时缩短了两次访问的休眠时间，实现了更快的刷量速度。
+但是需要慎用，在我实际的使用过程中经常因为速度过快导致requests结果出错。
 
 ## 参考
 https://blog.csdn.net/dala_da/article/details/79401163
