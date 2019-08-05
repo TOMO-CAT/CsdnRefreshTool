@@ -1,4 +1,4 @@
-# CsdnRefreshTool
+# CsdnRefreshTool【废弃】
 > 由于时间久远，加上代码质量不佳，暂废弃，最近会升级为可维护性较高的CsdnRefreshTool2.0版本。
 以CSDN为例利用爬虫实现刷PV流量
 ## 理解PV与UV
